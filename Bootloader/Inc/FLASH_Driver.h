@@ -2,6 +2,7 @@
 #define FLASH_DRIVER_H_
 
 #include <stdint.h>
+#include "STM32F401CCUx.h"
 
 //flash unlock keys
 #define FLASH_KEY1    0x45670123U
@@ -26,5 +27,6 @@
 #define FLASH_RANGE_ERROR    4U
 
 uint8_t  FLASH_Unlock(FLASH_RegDef_t* pFLASHx);
+void FLASH_Lock(FLASH_RegDef_t* pFLASHx);
 
 #endif /* FLASH_DRIVER_H_ */

@@ -1,5 +1,4 @@
 #include "FLASH_Driver.h"
-#include "STM32F401CCUx.h"
 
 uint8_t FLASH_Unlock(FLASH_RegDef_t* pFLASHx)
 {
@@ -14,4 +13,9 @@ uint8_t FLASH_Unlock(FLASH_RegDef_t* pFLASHx)
 
 	}
 	return FLASH_OK;
+}
+
+void FLASH_Lock(FLASH_RegDef_t* pFLASHx)
+{
+	pFLASHx->CR |= (1 << F_LOCK);
 }
